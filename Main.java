@@ -1,42 +1,32 @@
 import java.util.Scanner;
 public class Main {
 
-    public static void palindrome(String p){
-        String a = "";
-        String b = "";
-        String c = "";
-        String d = "";
-        String str = "";
-        str = p.toLowerCase();
 
-        for (int j = 0; j < str.length();j++){
-           if (Character.isLetter(str.charAt(j))){
-               c = str.substring(j,j+1);
-               d = d + c;
-           }
+public static void binary(int num){
+    int x;
+    int y = 0;
+    String str = "";
 
-        }
-        //System.out.println(d);
+    do {
 
-        for (int i = str.length()-1; i >= 0; i--){
-            if (Character.isLetter(str.charAt(i))) {
-                a = str.substring(i, i+1);
-                b = b + a;
-            }
+        x = num % 2;
+        num = num / 2;
+        str = x + str;
 
-        }
-        //System.out.println(b);
+    }while (num != 0);
+    System.out.println(str);
+}
+//100 - 1100100
 
-        if (d.equals(b)){
-            System.out.println("\"" + p + "\"" + " is a palindrome!");
-        }else System.out.println("\"" + p + "\"" + " is not a palindrome!");
-
-    }
 
     public static void main(String[] args) {
-        System.out.println("Enter a word to check if it is a palindrome!\nEnter your word:");
+
         Scanner scan = new Scanner(System.in);
-        palindrome(scan.nextLine());
+        System.out.println("Enter a number");
+        binary(scan.nextInt());
+
     }
 }
+
+
 
