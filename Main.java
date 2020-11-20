@@ -1,42 +1,31 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 public class Main {
 
-    public static void palindrome(String p){
+    public static void daimaou(String x, String y){
+
+        String w = "";
         String a = "";
-        String b = "";
-        String c = "";
-        String d = "";
-        String str = "";
-        str = p.toLowerCase();
+        String a2 = "";
 
-        for (int j = 0; j < str.length();j++){
-           if (Character.isLetter(str.charAt(j))){
-               c = str.substring(j,j+1);
-               d = d + c;
-           }
-
-        }
-        //System.out.println(d);
-
-        for (int i = str.length()-1; i >= 0; i--){
-            if (Character.isLetter(str.charAt(i))) {
-                a = str.substring(i, i+1);
-                b = b + a;
-            }
-
-        }
-        //System.out.println(b);
-
-        if (d.equals(b)){
-            System.out.println("\"" + p + "\"" + " is a palindrome!");
-        }else System.out.println("\"" + p + "\"" + " is not a palindrome!");
-
+        w = y;
+        w = y.substring(0,1).toUpperCase() + y.substring(1,y.length());
+        if (x.substring(0,1).contains("a")||x.substring(0,1).contains("e")||x.substring(0,1).contains("i")||x.substring(0,1).contains("o")||x.substring(0,1).contains("u")||x.substring(0,1).contains("A")||x.substring(0,1).contains("E")||x.substring(0,1).contains("I")||x.substring(0,1).contains("O")||x.substring(0,1).contains("U")){
+            a = "an";
+        }else a = "a";
+        if (y.substring(0,1).contains("a")||y.substring(0,1).contains("e")||y.substring(0,1).contains("i")||y.substring(0,1).contains("o")||y.substring(0,1).contains("u")||y.substring(0,1).contains("A")||y.substring(0,1).contains("E")||y.substring(0,1).contains("I")||y.substring(0,1).contains("O")||y.substring(0,1).contains("U")){
+            a2 = "an";
+        }else a2 = "a";
+        System.out.println("I have " + a + " " + x + ", I have " + a2 + " " + y + "\nUh! " + w + " " + x);
     }
-
     public static void main(String[] args) {
-        System.out.println("Enter a word to check if it is a palindrome!\nEnter your word:");
         Scanner scan = new Scanner(System.in);
-        palindrome(scan.nextLine());
+        System.out.print("Enter the first object you have!");
+        String x = scan.next();
+        System.out.println("Enter the second object you have!");
+        String y = scan.next();
+        daimaou(x,y);
+
+
     }
 }
-
